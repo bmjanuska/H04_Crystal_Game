@@ -1,4 +1,5 @@
-  //Varriable for the number you have to guess
+$(document).ready(function(){
+    //Varriable for the number you have to guess
   var targetNumber = Math.floor(Math.random() * 101) +19;
 
   //Varriable that edits the DOM for the number we have to guess
@@ -21,13 +22,9 @@
 
   //
   $("#loss").text(loss);
-
-
-  var inputValue = 0;
-       $('#inputValue').val(inputValue);
        
        var targetNumber = Math.floor(Math.random() * 101) +19;
-       $('.guess_this_number').val(targetNumber);
+       $('.guess_this_number').text(targetNumber);
        
        
       // Object array of all the crystals. Maps a random number to each crystal
@@ -45,12 +42,31 @@
        $('.'+key).click(function(){
           
 
-          inputValue += value;
+          counter += value;
           
-         $('.userTotal').val(inputValue);
-         if(inputValue > targetNumber){
-         alert('Lose!')
+         $('.userTotal').html(counter);
+         if(counter > targetNumber){
+         $('#wlMessage').text("You Lose :(" );
+         loss ++;
+         $('#loss').text(loss);
+         counter = 0;
+         $(".userTotal").text(counter);
+                    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
          }
-         if(inputValue === targetNumber) alert('Win!')
+
+         if(counter === targetNumber){
+         $('#wlMessage').text("You Won!!!");
+         wins ++;
+         $('#wins').text(wins);
+                  counter = 0;
+         $(".userTotal").text(counter);
+                    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
+
+         }
+
+
+
+
        });
       });
+   });
