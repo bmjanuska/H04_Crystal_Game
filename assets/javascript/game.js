@@ -11,54 +11,92 @@
 
   $("#wins").text(wins);
 
-    var loss = 0;
+  var loss = 0;
 
   $("#loss").text(loss);
 
 
+
   //Number options for what numbers the crystal can pick from 
-  var numberOptions = [1,2,3,4,5,6,7,8,9,10,11,12]; 
+  // var numberOptions = [1,2,3,4,5,6,7,8,9,10,11,12]; 
+  
+  var crystal_1Val = Math.floor(Math.random() * 11) +1; 
 
-  //if the number a cyrstal picks is already selected it will pick another number
- 
+  var crystal_2Val = Math.floor(Math.random() * 11) +1;
 
-  // Next we create a for loop to create crystals for every numberOption.
-  for (var i = 0; i < numberOptions.length; i++) {
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-    $(".cystal_1").attr(numberOptions[i]);
+  var crystal_3Val = Math.floor(Math.random() * 11) +1;
 
-        $(".cystal_2").attr(numberOptions[i]);
+  var crystal_4Val = Math.floor(Math.random() * 11) +1;
 
 
-    $(".cystal_3").attr(numberOptions[i]);
+if (crystal_1Val === crystal_2Val) {
+   let newNum = Math.floor(Math.random() * 11) +1
+   if (newNum !== crystal_1Val){
+     crystal_2Val = newNum
+}
+  
+ };
+
+  // if (crystal_1Val === crystal_2Val) {
+  //  crystal_2Val !== crystal_1Val || 
+  //  crystal_3Val !== crystal_2Val || 
+  //  crystal_1Val !== crystal_4Val ;
+  //   Math.floor(Math.random() * 11) +1;
+  // }
+
+  // if (crystal_2Val === crystal_3Val) {
+  //  Math.floor(Math.random() * 11) +1;
+  //  crystal_3Val !== crystal_2Val;
+  // }
+
+  // if (crystal_3Val === crystal_4Val) {
+  //  Math.floor(Math.random() * 11) +1;
+  //  crystal_4Val !== crystal_3Val;
+  // }
+
+  // if (crystal_4Val === crystal_1Val) {
+  //  Math.floor(Math.random() * 11) +1;
+  //  crystal_1Val !== crystal_4Val;
+  // }
 
 
-    $(".cystal_4").attr(numberOptions[i]);
-
-
-  }
-
-
-  // This time, our click event applies to every single crystal on the page. Not just one.
   $(".crystal_1").on("click", function() {
+    counter += crystal_1Val
+    // console.log("this is from clicking crystal 1");
+    // var crystalValue = ($(this).attr(".userTotal"));
+    // crystal_1Val = parseInt(crystalValue);
+    console.log(crystal_1Val);
+    });
 
-   
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    // We then add the crystalValue to the user's "counter" which is a global variable.
-    // Every click, from every crystal adds to the global counter.
-    counter += crystalValue;
-
-    // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + counter);
-
-    if (counter === targetNumber) {
-      alert("You win!");
-    }
-
-    else if (counter >= targetNumber) {
-      alert("You lose!!");
-    }
-
+  $(".crystal_2").on("click", function() {
+    counter += crystal_2Val
+    // console.log("this is from clicking crystal 2");
+    // crystal_2Val = parseInt(crystalValue);
+    console.log(crystal_2Val);
   });
+
+  $(".crystal_3").on("click", function() {
+    counter += crystal_3Val
+    // console.log("this is from clicking crystal 3");
+    // crystal_3Val = parseInt(crystalValue);
+    console.log(crystal_3Val);  });
+
+  $(".crystal_4").on("click", function() {
+    counter += crystal_4Val
+    // console.log("this is from clicking crystal 4");
+    // crystal_4Val = parseInt(crystalValue);
+    console.log(crystal_4Val);
+  });
+
+
+  //   alert("New score: " + counter);
+
+  //   if (counter === targetNumber) {
+  //     alert("You win!");
+  //   }
+
+  //   else if (counter >= targetNumber) {
+  //     alert("You lose!!");
+
+
+  
