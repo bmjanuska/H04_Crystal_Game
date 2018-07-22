@@ -26,6 +26,12 @@ $(document).ready(function(){
   $('.guess_this_number').text(targetNumber);
 
 
+  function resetGame(){
+    counter = 0;
+    $(".userTotal").text(counter);
+    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
+  };
+
   // Declare array for crystal
   var crystal = ["crystal_1", "crystal_2", "crystal_3", "crystal_4" ];
 
@@ -46,7 +52,7 @@ $(document).ready(function(){
     //Add the random number    
     crystal[i] = rndnum;
   };
-          
+       
   console.log(crystal);
 
   $(".crystal_1").on("click", function () {
@@ -55,58 +61,97 @@ $(document).ready(function(){
     counter += crystalValue1;
 
     $('.userTotal').html(counter);
+    
+    if(counter > targetNumber){
+      $('#wlMessage').text("You Lose :(" );
+      losses ++;
+      $('#loss').text(losses);
+      resetGame();
+    };
+
+    if(counter === targetNumber){
+      $('#wlMessage').text("You Won!!!");
+      wins ++;
+      $('#wins').text(wins);
+      resetGame();
+    };
 
   });
 
 
-$(".crystal_2").on("click", function () {
+  $(".crystal_2").on("click", function () {
     var crystalValue2 = crystal[1];
 
-    counter += crystalValue2;
-    
+    counter += crystalValue1;
+
     $('.userTotal').html(counter);
+    
+    if(counter > targetNumber){
+      $('#wlMessage').text("You Lose :(" );
+      losses ++;
+      $('#loss').text(losses);
+      resetGame();
+    };
+
+    if(counter === targetNumber){
+      $('#wlMessage').text("You Won!!!");
+      wins ++;
+      $('#wins').text(wins);
+      resetGame();
+    };
 
   });
 
 
-$(".crystal_3").on("click", function () {
+  $(".crystal_3").on("click", function () {
     var crystalValue3 = crystal[2];
 
-    counter += crystalValue3;
-    
+    counter += crystalValue1;
+
     $('.userTotal').html(counter);
+    
+    if(counter > targetNumber){
+      $('#wlMessage').text("You Lose :(" );
+      losses ++;
+      $('#loss').text(losses);
+      resetGame();
+    };
+
+    if(counter === targetNumber){
+      $('#wlMessage').text("You Won!!!");
+      wins ++;
+      $('#wins').text(wins);
+      resetGame();
+    };
 
   });
 
 
-$(".crystal_4").on("click", function () {
+  $(".crystal_4").on("click", function () {
     var crystalValue4 = crystal[3];
 
-    counter += crystalValue4;
-    
+    counter += crystalValue1;
+
     $('.userTotal').html(counter);
+    
+    if(counter > targetNumber){
+      $('#wlMessage').text("You Lose :(" );
+      losses ++;
+      $('#loss').text(losses);
+      resetGame();
+    };
+
+    if(counter === targetNumber){
+      $('#wlMessage').text("You Won!!!");
+      wins ++;
+      $('#wins').text(wins);
+      resetGame();
+    };
 
   });
 
 
-  if(counter > targetNumber){
-    $('#wlMessage').text("You Lose :(" );
-    loss ++;
-    $('#loss').text(loss);
-    counter = 0;
-    $(".userTotal").text(counter);
-    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
-  }
 
-  if(counter === targetNumber){
-    $('#wlMessage').text("You Won!!!");
-    wins ++;
-    $('#wins').text(wins);
-    counter = 0;
-    $(".userTotal").text(counter);
-    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
-
-  }
 
 
 
