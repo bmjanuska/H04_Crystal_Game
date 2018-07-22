@@ -26,46 +26,27 @@
       $('.guess_this_number').text(targetNumber);
 
 
-        // Object array of all the crystals. Maps a random number to each crystal
           // Declare array for crystal
           var crystal = ["crystal_1", "crystal_2", "crystal_3", "crystal_4" ];
           
-          // Declare var rndnum 
+          // Declare variable for holding a random number 
           var rndnum = 0;
 
-          // For loop each element in array
+          // Loading the array elements one at a time
           for ( var i = 0; i < crystal.length; i++){
-          console.log("this is my array: " + crystal);
 
-            // While rndnum is being tested for duplicates 
-            while (1) { 
-              // Get random number
-              // For each element 
-              rndnum = Math.floor(Math.random() * 12) + 1;
-
-              //Checking rndnum against next item in array
-              for ( var j = 0; j < crystal.length; j++){
-
-                // If rndnum is in array then test = false
-                if (rndnum === crystal[j]){
-                  // Restart while loop
-                  console.log("found a dup " + rndnum); break;
-                };
-              };
-
-              //Where you are adding random number to the array
-              crystal[i] = rndnum;
-              break;
+            // Generating a random number between 1 through 12
+            rndnum = (Math.floor(Math.random() * 12) + 1);
+            
+            //If there is a duplicate number, it will be regenerated
+            while (crystal.includes(rndnum)) { 
+              rndnum = (Math.floor(Math.random() * 12) + 1);
             };
+
+            //Add the random number to the array
+            crystal[i] = rndnum;
           };
           
-          console.log("this is my array: " + crystal);
-
-          // test = true
-          // Place rndnum in array
-          // Exit while
-
-
 
 
         });
