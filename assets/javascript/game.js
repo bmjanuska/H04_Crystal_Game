@@ -44,12 +44,13 @@ $(document).ready(function(){
     };
 
     //Add the random number    
-     crystal[i] = rndnum;
+    crystal[i] = rndnum;
   };
-    
+
 
   console.log(allValue);
 
+  //Reset counter and new number to guess. BUT NO HOW TO RESET NEW STRING OF NUMBERS
   function resetGame(){
     counter = 0;
     $(".userTotal").text(counter);
@@ -57,8 +58,24 @@ $(document).ready(function(){
 
   };
 
+  //Losing score increases and displays message
+  function youLose(){ 
+    $('#wlMessage').text("You Lose :(" );
+      losses ++;
+      $('#losses').text(losses);
+    };
+
+  //Winning score increases and displays message
+    function youWon(){
+      $('#wlMessage').text("You Won!!!");
+      wins ++;
+      $('#wins').text(wins);
+    };
+
+
   //Calling the number values of the crystals
   var allValue = [ crystal[0],crystal[1], crystal[2], crystal[3] ];
+    console.log(allValue);
 
 
   $(".crystal_1").on("click", function () {
@@ -68,21 +85,16 @@ $(document).ready(function(){
 
     $('.userTotal').html(counter);
     if(counter > targetNumber){
-      $('#wlMessage').text("You Lose :(" );
-        losses ++;
-        $('#losses').text(losses);
-        resetGame();
+      youLose();
+      resetGame();
 
-      };
+    };
 
-      if(counter === targetNumber){
-        $('#wlMessage').text("You Won!!!");
-        wins ++;
-        $('#wins').text(wins);
-        resetGame();
-      };
-
-    });
+    if(counter === targetNumber){
+      youWon();
+      resetGame();
+    };
+  });
 
 
   $(".crystal_2").on("click", function () {
@@ -90,22 +102,18 @@ $(document).ready(function(){
     counter += allValue[1];
     console.log("cry2: " + allValue[1])
 
+
     $('.userTotal').html(counter);
     if(counter > targetNumber){
-      $('#wlMessage').text("You Lose :(" );
-        losses ++;
-        $('#losses').text(losses);
-        resetGame();
-      };
+      youLose();
+      resetGame();
+    };
 
-      if(counter === targetNumber){
-        $('#wlMessage').text("You Won!!!");
-        wins ++;
-        $('#wins').text(wins);
-        resetGame();
-      };
-
-    });
+    if(counter === targetNumber){
+      youWon();
+      resetGame();
+    };
+  });
 
 
   $(".crystal_3").on("click", function () {
@@ -115,20 +123,15 @@ $(document).ready(function(){
 
     $('.userTotal').html(counter);
     if(counter > targetNumber){
-      $('#wlMessage').text("You Lose :(" );
-        losses ++;
-        $('#losses').text(losses);
-        resetGame();
-      };
+      youLose();
+      resetGame();
+    };
 
-      if(counter === targetNumber){
-        $('#wlMessage').text("You Won!!!");
-        wins ++;
-        $('#wins').text(wins);
-        resetGame();
-      };
-
-    });
+    if(counter === targetNumber){
+      youWon();
+      resetGame();
+    };
+  });
 
 
   $(".crystal_4").on("click", function () {
@@ -138,17 +141,14 @@ $(document).ready(function(){
     $('.userTotal').html(counter);
 
     if(counter > targetNumber){
-      $('#wlMessage').text("You Lose :(" );
-        losses ++;
-        $('#losses').text(losses);
-        resetGame();
-      };
+      youLose();
+      resetGame();
+    };
 
-      if(counter === targetNumber){
-        $('#wlMessage').text("You Won!!!");
-        wins ++;
-        $('#wins').text(wins);
-        resetGame();
-      };
+    if(counter === targetNumber){
+      youWon();
+      resetGame();
+    };
   });
+
 });

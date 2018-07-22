@@ -3,7 +3,19 @@
 	font-size: 55px;
 }
 
-.cimg{
-	height: 100px;
-	width: 100px;
+
+
+.btn-supreme {
+	color: #fff;
+    background-color:pink;
+    border-width: 0px;
+    border-style: none;
+}
+
+.row {
+	margin: 20px 0;
+}
+
+body{
+	font-family: 'Gaegu', cursive;
 }

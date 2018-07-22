@@ -11,7 +11,10 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
 	crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">	
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
@@ -29,14 +32,14 @@
 	<!-- Container --> 
 	<div class="container">
 		
-		<!-- Title --> 
+		<!-- The Gamebox --> 
 		<div class="jumbotron">
 			<h1 class="text-center">Crystal Game</h1>
 			<div class="text-center">
 				
 				<!-- Instructions --> 
 				<!-- Button to start Instructions Modal -->
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				<button type="button" class="btn btn-supreme" data-toggle="modal" data-target="#exampleModal">
 					Instructions
 				</button>
 
@@ -66,12 +69,20 @@
 					</div>
 				</div>
 
-				<!-- The Random Computer Number --> 
+				<!-- Numbers --> 
 				<div class ="row">
-					<div class="col-12">
-						<div class="col-12">Match the number</div>
+					<div class="col-6">
+						<!-- The Random Computer Number --> 
+						<div class="col-12">Match This</div>
 						<div class ="guess_this_number"></div>
 					</div>
+
+					<div class="col-6">
+						<!-- User number --> 
+						<div class="col-12">Your Number</div>
+						<div class ="userTotal"></div>
+					</div>
+
 				</div>
 
 				<!-- Crystals --> 
@@ -82,38 +93,27 @@
 					<div class ="col-3 cimg crystal_4"><img src="assets/images/crystal-04.svg"></div>
 				</div>
 
-				<!-- User number --> 
-				<div class ="row">
-					<div class="col-12">
-						<div class="col-12">Your number</div>
-						<div class ="userTotal"></div>
-					</div>
-				</div>
-
 				<!-- Score --> 
 				<div class ="row">
 					<div class="col-12">
 						<hr>
-<!-- 						<div class="col-12">Score</div>
--->						<div id="wlMessage"></div>
-<div class="row">
-	<div class="col-6">
-		<div><h6>Wins:</h6></div>
-		<div id ="wins"></div>
+						<div id="wlMessage"></div>
+						<div class="row">
+							<div class="col-6">
+								<div><h6>Wins:</h6></div>
+								<div id ="wins"></div>
+							</div>
+							<div class="col-6">
+								<div><h6>Losses:</h6></div>
+								<div id ="losses"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-6">
-		<div><h6>Losses:</h6></div>
-		<div id ="losses"></div>
-	</div>
-</div>
-</div>
-</div>
-
-
-</div>
-
-<script src="assets/javascript/game.js"></script>
-
+	<script src="assets/javascript/game.js"></script>
 </body>
 
 
