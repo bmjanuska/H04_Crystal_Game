@@ -33,7 +33,7 @@ $(document).ready(function(){
   // Declare variable for holding a random number 
   var rndnum = 0;
 
-  // Loading the array elements one at a time
+  // Loading the array elements one at a time 
   for ( var i = 0; i < crystal.length; i++){
     // Generating a random number between 1 through 12
     rndnum = (Math.floor(Math.random() * 12) + 1);
@@ -47,8 +47,6 @@ $(document).ready(function(){
      crystal[i] = rndnum;
   };
     
-  //Calling the number values of the crystals
-  var allValue = [ crystal[0],crystal[1], crystal[2], crystal[3] ];
 
   console.log(allValue);
 
@@ -56,7 +54,12 @@ $(document).ready(function(){
     counter = 0;
     $(".userTotal").text(counter);
     $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
+
   };
+
+  //Calling the number values of the crystals
+  var allValue = [ crystal[0],crystal[1], crystal[2], crystal[3] ];
+
 
   $(".crystal_1").on("click", function () {
 
