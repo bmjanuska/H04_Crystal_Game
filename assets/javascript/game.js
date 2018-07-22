@@ -26,11 +26,6 @@ $(document).ready(function(){
   $('.guess_this_number').text(targetNumber);
 
 
-  function resetGame(){
-    counter = 0;
-    $(".userTotal").text(counter);
-    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
-  };
 
   // Declare array for crystal
   var crystal = ["crystal_1", "crystal_2", "crystal_3", "crystal_4" ];
@@ -40,27 +35,28 @@ $(document).ready(function(){
 
   // Loading the array elements one at a time
   for ( var i = 0; i < crystal.length; i++){
-
     // Generating a random number between 1 through 12
     rndnum = (Math.floor(Math.random() * 12) + 1);
-
+    
     //If there is a duplicate number, it will be regenerated
     while (crystal.includes(rndnum)) { 
       rndnum = (Math.floor(Math.random() * 12) + 1);
     };
 
     //Add the random number    
-    crystal[i] = rndnum;
+     crystal[i] = rndnum;
   };
-
-
-  console.log(crystal);
     
-    var allValue = [ crystal[0],crystal[1], crystal[2], crystal[3] ];
+  //Calling the number values of the crystals
+  var allValue = [ crystal[0],crystal[1], crystal[2], crystal[3] ];
 
   console.log(allValue);
 
-
+  function resetGame(){
+    counter = 0;
+    $(".userTotal").text(counter);
+    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
+  };
 
   $(".crystal_1").on("click", function () {
 
@@ -151,12 +147,5 @@ $(document).ready(function(){
         $('#wins').text(wins);
         resetGame();
       };
-
   });
-
-
-
-
-
-
 });
