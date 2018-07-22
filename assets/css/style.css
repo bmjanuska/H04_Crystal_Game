@@ -1,4 +1,9 @@
 .guess_this_number, .userTotal{
 	color:#333;
-	font-size: 75px;
+	font-size: 55px;
+}
+
+.cimg{
+	height: 100px;
+	width: 100px;
 }
