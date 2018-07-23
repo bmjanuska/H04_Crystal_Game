@@ -1,6 +1,6 @@
 $(document).ready(function(){
   
-  //========= Variables ======== 
+  //========= Variables ========= 
 
   //Our number that starts at zero
   var counter = 0;
@@ -19,7 +19,7 @@ $(document).ready(function(){
   $("#losses").text(losses);
 
   //The computer generated number is determined by a math random
-  var targetNumber = Math.floor(Math.random() * 101) + 19;
+  var targetNumber = Math.floor(Math.random() * 120) + 1;
   $('.guess_this_number').text(targetNumber);
 
   // Declare array for crystal
@@ -28,15 +28,15 @@ $(document).ready(function(){
   // Declare variable for holding a random number 
   var rndnum = 0;
 
-//========= Functions ======== 
+//========= Functions =========
 
 function resetGame(){
     counter = 0;
     $(".userTotal").text(counter);
-    $(".guess_this_number").text(Math.floor(Math.random() * 101) +19);
+    targetNumber = (Math.floor(Math.random() * 120) + 1);
+    $('.guess_this_number').text(targetNumber);
     genCryNum();
   };
-    console.log(targetNumber);
 
   //Random number generator for crystals
   function genCryNum(){
@@ -54,7 +54,9 @@ function resetGame(){
     crystal[i] = rndnum;
   };
 };
-  
+
+  console.log(targetNumber);
+
   //Losing score increases and displays message
   function youLose(){ 
     $('#wlMessage').text("You Lose :(" );
@@ -69,8 +71,9 @@ function resetGame(){
     $('#wins').text(wins);
   };
 
+console.log(genCryNum());
 
-//========= On Clicks ======== 
+//========= On Clicks ========= 
 
 //Crystal 1/ button one
 $(".crystal_1").on("click", function () {
@@ -95,7 +98,6 @@ $(".crystal_2").on("click", function () {
   counter += crystal[1];
   console.log("cry2: " + crystal[1])
 
-
   $('.userTotal').html(counter);
   if(counter > targetNumber){
     youLose();
@@ -106,7 +108,6 @@ $(".crystal_2").on("click", function () {
     resetGame();
   };
 });
-
 
 //Crystal 3/ button one
 $(".crystal_3").on("click", function () {
@@ -124,6 +125,7 @@ $(".crystal_3").on("click", function () {
     resetGame();
   };
 });
+  console.log(targetNumber);
 
 //Crystal 4/ button one
 $(".crystal_4").on("click", function () {
@@ -136,14 +138,12 @@ $(".crystal_4").on("click", function () {
     youLose();
     resetGame();
   };
-
   if(counter === targetNumber){
     youWon();
     resetGame();
-
   };
 });
-  console.log(targetNumber);
 
+  console.log(targetNumber);
 
 });

@@ -19,3 +19,10 @@
 body{
 	font-family: 'Gaegu', cursive;
 }
+
+.jumbotron{
+	margin-bottom:0px;
+ 	background-image: url(‘"http://www.creativeuncut.com/gallery-05/art/os-forest-of-elrit.jpg");
+ 	background-size: cover;
+ 	background-repeat: no-repeat;
+}
