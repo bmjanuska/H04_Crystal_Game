@@ -55,7 +55,6 @@ function resetGame(){
   };
 };
 
-  console.log(targetNumber);
 
   //Losing score increases and displays message
   function youLose(){ 
@@ -71,7 +70,7 @@ function resetGame(){
     $('#wins').text(wins);
   };
 
-console.log(genCryNum());
+  (genCryNum());
 
 //========= On Clicks ========= 
 
@@ -79,7 +78,6 @@ console.log(genCryNum());
 $(".crystal_1").on("click", function () {
 
   counter += crystal[0];
-  console.log("cry1: " + crystal[0])
 
   $('.userTotal').html(counter);
   if(counter > targetNumber){
@@ -96,7 +94,6 @@ $(".crystal_1").on("click", function () {
 $(".crystal_2").on("click", function () {
 
   counter += crystal[1];
-  console.log("cry2: " + crystal[1])
 
   $('.userTotal').html(counter);
   if(counter > targetNumber){
@@ -113,7 +110,6 @@ $(".crystal_2").on("click", function () {
 $(".crystal_3").on("click", function () {
 
   counter += crystal[2];
-  console.log("cry3: " + crystal[2])
 
   $('.userTotal').html(counter);
   if(counter > targetNumber){
@@ -125,13 +121,11 @@ $(".crystal_3").on("click", function () {
     resetGame();
   };
 });
-  console.log(targetNumber);
 
 //Crystal 4/ button one
 $(".crystal_4").on("click", function () {
 
   counter += crystal[3];
-  console.log("cry4: " + crystal[3])    
   $('.userTotal').html(counter);
 
   if(counter > targetNumber){
@@ -144,6 +138,5 @@ $(".crystal_4").on("click", function () {
   };
 });
 
-  console.log(targetNumber);
 
 });

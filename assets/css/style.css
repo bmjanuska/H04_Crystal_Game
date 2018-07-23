@@ -10,8 +10,9 @@
     background-color:pink;
     border-width: 0px;
     border-style: none;
+    margin: 15px;
 }
-
+x
 .row {
 	margin: 20px 0;
 }
@@ -22,7 +23,7 @@ body{
 
 .jumbotron{
 	margin-bottom:0px;
- 	background-image: url(‘"http://www.creativeuncut.com/gallery-05/art/os-forest-of-elrit.jpg");
+ 	background-image: url("http://www.creativeuncut.com/gallery-05/art/os-forest-of-elrit.jpg");
  	background-size: cover;
  	background-repeat: no-repeat;
 }
